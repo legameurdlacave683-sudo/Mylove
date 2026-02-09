@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pour Laurie ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #ffe0ec, #ffc2d1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 22px;
+      text-align: center;
+      max-width: 440px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-top: 1.6rem;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: #ff4d6d;
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 20px rgba(255,77,109,0.4);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(255,77,109,0.5);
+    }
+
+    .choices button {
+      margin: 0.6rem;
+      background: #ffe3eb;
+      color: #ff4d6d;
+      box-shadow: none;
+    }
+
+    .choices button:hover {
+      background: #ff4d6d;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="card">
+    <h1>Laurie ❤️</h1>
+    <p>
+      J’ai fait ça pour toi.<br>
+      Prends ton temps.
+    </p>
+    <button onclick="next()">Continuer</button>
+  </div>
+
+  <script>
+    let step = 0;
+    const card = document.getElementById("card");
+
+    function next() {
+      step++;
+
+      if (step === 1) {
+        card.innerHTML = `
+          <p>
+            Malgré le fait que je ne sois pas le meilleur avec les mots,<br>
+            tu es la personne que j’adore le plus.
+          </p>
+          <button onclick="next()">Continuer</button>
+        `;
+      }
+
+      else if (step === 2) {
+        card.innerHTML = `
+          <p>
+            Avant d’être avec toi, je ne pensais pas pouvoir aimer quelqu’un à ce point.
+          </p>
+          <p>
+            Tu as complètement changé ma façon de voir les choses.
+          </p>
+          <button onclick="next()">Continuer</button>
+        `;
+      }
+
+      else if (step === 3) {
+        card.innerHTML = `
+          <p>
+            À mes yeux, tu es un ange.<br>
+            Tu es la plus belle que j’ai jamais vue.
+          </p>
+          <p>
+            Tes belles fesses 😉, tes seins,<br>
+            ton magnifique ventre…<br>
+            j’aime absolument tout de toi.
+          </p>
+          <button onclick="next()">Continuer</button>
+        `;
+      }
+
+      else if (step === 4) {
+        card.innerHTML = `
+          <p>
+            Mais ce que j’aime le plus chez toi,<br>
+            c’est ton cœur.
+          </p>
+          <p>
+            Il est immense — parfois même trop grand pour toi —<br>
+            et c’est exactement pour ça que je t’aime autant.
+          </p>
+          <button onclick="next()">Continuer</button>
+        `;
+      }
+
+      else if (step === 5) {
+        card.innerHTML = `
+          <p>
+            Je veux finir ma vie avec toi.
+          </p>
+          <button onclick="next()">Continuer</button>
+        `;
+      }
+
+      else if (step === 6) {
+        card.innerHTML = `
+          <h1>Alors… 💌</h1>
+          <p>
+            Laurie,<br>
+            est-ce que tu veux être ma Valentine ?
+          </p>
+          <div class="choices">
+            <button onclick="yes()">Oui ❤️</button>
+            <button onclick="yes()">Évidemment 💕</button>
+          </div>
+        `;
+      }
+    }
+
+    function yes() {
+      card.innerHTML = `
+        <h1>❤️</h1>
+        <p>
+          Merci d’être toi.<br><br>
+          Joyeuse Saint-Valentin 💕
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
